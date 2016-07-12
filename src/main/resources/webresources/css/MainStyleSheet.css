@@ -1,0 +1,567 @@
+/***Этот файл содержит стили для основных страниц приложения, с которыми работает пользователь
+*(не включая страницу авторизации и служебные 404, 405 и т.д)*/
+
+/*Очистка внутренних и внешних отступов для всех элементов по-умолчанию.
+**Полезно для получения одинаковых отступов во всех браузерах*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    /*Убирает нежелательную возможность выделять содержимое веб-страницы*/
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE/Edge */
+    user-select: none;
+    background-image: url("../images/android-5-0-lollipop-material-3569.jpg");
+    padding-top: 80px;
+}
+
+a {
+    text-decoration: none;              /*Подчеркивание ссылок не вписываетя в дизайн приложения*/
+}
+
+span {
+    height: 20px;
+    vertical-align: middle;                /*Такой текст внутри кнопок и проч. элементов приятней для чтения*/
+}
+
+/*Главный контейнер, содержащий всю рабочую область и меню приложения.
+*Образует стилизованную прямоуглоьную область. Создан для адаптивности разметки (выравнивание по центру) и в дизайнерских целях*/
+.main_container {
+    margin: 0px auto 0px auto;
+    min-width: 1030px;
+    max-width: 1300px;
+    box-shadow: 5px 5px 13px -2px rgba(24, 24, 24, 0.82);
+}
+
+/*Стили заглавной части рабочей области приложения, котрая выполняет роль контейнера главного меню и блока информации о пользователе*/
+.header {
+    position: relative;
+    height: 50px;
+    padding: 0px;
+}
+
+/*Внешний вид главного меню. По сути контейнер для кнопок для перехода по главным страцинам  приложения*/
+.menu {
+    width: 100%;
+    height: 50px;
+    margin: 0px;
+    padding-bottom: 0px;
+    background-color: #354052;
+}
+
+.menu ul {
+    padding: 0px;
+    max-width: 900px;            /*Ширина меню с кнопками*/
+    margin: 0px auto 0px auto;   /*для адаптивности разметки*/
+}
+
+.menu ul li {
+    display: inline-block;
+    list-style-type: none;
+    margin-right: 60px;
+}
+
+/*Внещний вид кнопок для перехода по главным страцинам приложения*/
+.menu a.md-raised.md-button.md-ink-ripple {
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    color: white;
+    background-color: transparent;          /*кнопки задуманы полностью прозрачными*/
+    box-shadow: none;
+}
+
+.menu a.md-raised.md-button.md-ink-ripple:hover {
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.10);      /*при наведении курсора кнопки становятся чуть светлее, чтобы выделяться на фоне других*/
+}
+
+/*Внешний вид контейнера информации об текущем аккаунте и меню с кнопкой выхода из него*/
+.user_info {
+    position: absolute;              /*позволяет привязаться к координатам контейнера. Полезно для адаптивности верстки*/
+    padding: 7px 3px 0px 3px;
+    width: 180px;
+    height: 50px;
+    right: 0px;                      /*Текущий блок всегда будет привязан к правой границе заглавной части (header), независимо от ее ширины*/
+    top: 0px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    background-color: #5C6BC0;
+}
+
+.user_info span {
+    vertical-align: baseline;       /*для лучшей читаемости*/
+}
+
+/*Стили кнопки открывающей меню выхода из аккаунта*/
+.user_info button {
+    display: block;
+    box-sizing: content-box;
+    width: 168px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;      /*Если название аккаунта (e-mail) слишком длинный, то он обрезается с подстановкой многоточия, чтобы было ясно,
+    что он длинней отведенной под него области.*/
+}
+
+/*Стили контейнера рабочей области приложения*/
+.workspace {
+    position: relative;
+    min-height: 635px;          /*Адаптивная ширина*/
+    background-color: white;
+    padding-top: 40px;
+}
+
+/*Стиль для области, где размещены все главные рабочие элементы страницы, включая таблицу.
+**Помогает в разметке*/
+.main_space {
+    position: relative;         /*для элементов с абсол. позиционированием*/
+}
+
+
+/***************************************ТАБЛИЦЫ***********************************************/
+
+table {
+    font-weight: bold;
+    border-collapse: collapse;
+    margin: auto;
+    table-layout: fixed;
+    width: 964px;
+}
+
+table th, td {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid #000000;
+    padding: 5px 10px 5px 10px;
+    margin: 0px;
+    height: 20px;
+}
+
+table th:nth-child(1),
+table td:nth-child(1) {
+    width: 71px;
+}
+
+table th:nth-child(2),
+table td:nth-child(2) {
+    min-width: 700px;
+    max-width: 750px;
+    width: 742px;
+}
+
+table th:nth-child(3),
+table td:nth-child(3) {
+    width: 150px;
+}
+
+/*На разных страницах приложения - разный контент в таблицах. Он требует разной ширины ячеек,
+**чтобы выглядеть читабельно. w2 - профиль ширины столбцов таблицы, подходящий для всех страниц, кроме "Мои диски" (на ней по-умолчанию)*/
+table.w2 th:nth-child(2),
+table.w2 td:nth-child(2) {
+    min-width: 700px;
+    max-width: 730px;
+    width: 730px;
+}
+
+table.w2 th:nth-child(3),
+table.w2 td:nth-child(3) {
+    width: 162px;
+    max-width: 162px;
+}
+
+/*Шапка таблицы выделяется особыми цветами*/
+table.outer_table > tbody > tr > th {
+    border-color: #CCD3D7;
+    background-color: #dfe1e2;
+}
+
+table.inner_table tr td {
+    background-color: #F6F8F9;
+    border-color: #CCD3D7;
+    word-wrap: break-word;         /*Если н.р. название диска слишком длинное, то разумно будет сделать переносы по словам*/
+}
+
+table.inner_table tr td:first-child {
+    padding: 0px;                       /*рвая ячейка содержит блок и поэтому не должна иметь внутренних отступов*/
+}
+
+@-moz-document url-prefix() {              /*Firefox требует, чтобы родительский td тоже был height: 100%, чтобы внутренний Div занял всю его высоту*/
+    table.inner_table tr td:first-child {
+        height: 100%;
+    }
+}
+
+/*Стили блока внутри первой ячейки каждой строки в теле таблицы.
+**Блок нужен только для правильного размещения боковой цветной линии*/
+table.inner_table tr td:first-child > div {
+    width: 100%;                              /*этот блок должен вести себя так будто его и нет, т.е. растягиваться на всю ячейку по ширине*/
+    height: 100%;                             /*и высоте*/
+    position: relative;
+    z-index: 0;
+}
+
+/*Весь этот набор стилей позволяет наилучшим образом выровнять текст по вертикали внутри первой ячейки каждой строки*/
+table.inner_table tr td:first-child div > span {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 1em;
+    margin: auto;
+}
+
+/*При наведении на невыбранную строку таблицы в режиме выбора в первой ячейке этой строки
+**появляется вертикальная цветная линия. Она нужна для того чтобы лучше обозначить, на какой строке сейчас курсор*/
+table.inner_table[data-select-mode="single"] tr[data-selected="false"]:hover td:first-child > div:before,
+table.inner_table[data-select-mode="multi"] tr[data-selected="false"]:hover td:first-child > div:before {
+    content: "";
+    display: block;
+    width: 3px;
+    background-color: rgba(92, 107, 192, 0.86);
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+/**При наведении на невыбранную строку таблицы в режиме выбора строка должна также менять цвет своего фона,
+***а курсор приоблетать вид как при наведении на ссылку, чтобы было понятно, что строка интерактивна*/
+table.inner_table[data-select-mode="single"] tr[data-selected="false"]:hover td,
+table.inner_table[data-select-mode="multi"] tr[data-selected="false"]:hover td {
+    background-color: #eaeced;
+    cursor: pointer;
+}
+
+/*Заблокированная строка выглядит неавктивной благодаря цвету текста*/
+table.inner_table[data-select-mode="multi"] tr[data-selected="blocked"] {
+    color: #989a9a;
+}
+
+/*Цвет выделенных (выбранных) строк*/
+table.inner_table tr[data-selected="true"] td {
+    background-color: #ebebeb
+}
+
+table md-checkbox {
+    display: none;            /*По-умолчанию все чекбоксы таблиц скрыты*/
+}
+
+/*Внкшний вид чекбокса внутри строк таблицы*/
+table.inner_table td md-checkbox {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 30%;          /*для выравнивания по центур по вертикали*/
+    margin: auto;
+}
+
+/*Стили блока, содержащего тело таблицы*/
+.tblock {
+    position: relative;
+    height: 270px;        /*Высота, отведенная под тело таблицы*/
+    border: none;
+}
+
+/*Стили фона таблицы, который выполняет исключительно декроативную функцию
+**Виден, если высота контента меньше высоты тела таблицы*/
+.bottom_line {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 269px;         /*на пиксель меньше высоты тела таблицы, чтобы не было двойной нижней границы*/
+    width: 962px;
+    border: 1px solid #CCD3D7;
+    background-color: #e9f0f4;
+    box-shadow: inset 2px 3px 13px -3px #a7a7a7;
+}
+
+/*Стили блока, содержащего уведомление об отсутствии дисков*/
+.bottom_line div {
+    font-size: 18px;
+    margin: 100px 0px 0px 0px;
+    color: #8faabc;
+    text-align: center;                /*Для выравнивания по центру уведомления об отсутствии дисков в таблице (см. разметку в jsp)*/
+}
+
+/***************************************КНОПКИ********************************************/
+
+
+/*Стили для области с главным кнопками до работе с таблицей (добавить диск, удалить диск и т.д.)*/
+.button_space {
+    margin: 0px auto 0px auto;      /*выравнивание по левому краю таблицы таблице*/
+    width: 965px;                   /*это чтобы выравнивание работало*/
+    padding: 25px 0px 20px 0px;
+    position: relative;
+}
+
+.button_space ul {
+    max-width: 600px;          /*болшего пространства под кнопки понадобиться не может*/
+}
+
+.button_space ul li {
+    display: inline-block;         /*чтобы кнопки располагались по горизонатли*/
+    list-style-type: none;         /*маркеры списка не нужны*/
+}
+
+/*Класс контейнера для счетчиков дисков под справа под таблицей*/
+.counterHolder {
+    position: absolute;       /*для тонкой настройки расположения*/
+    top: 10px;
+    right: 0px;
+    padding: 3px 0px 3px 5px;
+}
+
+/*Класс для всякого рода счетчиков на странице. Вписывает счетики в общий дизайн приложения*/
+.counter {
+    color: #5c6bc0;
+    font-weight: bold;
+}
+
+/*********************************Поле редактирования контента**************************************/
+
+/*Стили области работы с контентом (редактирования названия, просмотра подр. информации о диске и т.д.)*/
+.workspace_divider {
+    max-height: 0px;               /*Изначально эта область закрыта (скрыта). Служит для правильной анимации закрытия и открытия этой области*/
+    box-shadow: inset 2px 3px 13px -2px #a7a7a7;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out 0ms;
+}
+
+/*Класс для блока работы с контентом типа "редактировать описание" или "создать диск"*/
+.content_edit_field {
+    width: 965px;
+    margin: 10px auto 0px auto;
+    padding: 0px;
+    display: none;
+}
+
+/*Текстовое поле вблоке редактирования информации (.content_edit_filed)*/
+.content_edit_field textarea {
+    max-height: 80px;
+    margin: 0px auto 0px auto;
+    overflow: hidden;
+}
+
+/*Класс для блока работы с контентом. Больше подходит для случаев типа "Удалить диск" или "Взять диск", т.к. меньше по высоте*/
+.delete_context_field {
+    width: 965px;
+    margin: 20px auto 0px auto;
+    padding: 0px;
+    display: none;
+}
+
+/*Область с кнопками (типа "Сохранить" и "Отмена") в блоке .content_edit_field (см. выше)*/
+.edit_button-field_container {
+    height: 55px;                 /*Ограничение по высоте чтобы кнопки были вряд*/
+}
+
+/*Область с кнопками (типа "Удалить" и "Отмена") в блоке .delete_context_filed (см. выше)*/
+.delete-context_button-space {
+    margin-top: 15px;
+}
+
+/*Класс для блока, где выводится информация о выбранных в данный момент дисках*/
+.rows_count_field {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px 5px 3px 7px;
+    margin: 0px 0px 10px 0px;
+    background-color: #e3e5e6;
+    box-shadow: -1px 4px 13px -1px #a7a7a7;
+    color: #354052;
+}
+
+/*Настройка внешнего вида кнопкок из angular-material фреймворка*/
+.md-button {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0px;            /*чтобы были правильное расстояние между кнопками*/
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/*Настройка внешнего вида чекбоксов из angular-material фреймворка*/
+md-checkbox {
+    width: 20px;
+    height: 20px;
+    margin: 0px;           /*т.к. обнуление padding и margin (первое css правило в этом файле) не сработало для angular-material элемнтов, которые добавляются позже остальных*/
+    padding: 0px;
+    vertical-align: middle;
+    z-index: 5;
+}
+
+/*Класс для специального элемент с доп. фнукционалом для текстовых полей от material-angular*/
+md-input-container {
+    margin-bottom: 0px;       /*Текстовые поля должны располагаться компактно внутри своего блока*/
+}
+
+md-checkbox > div > div._md-icon {
+    border-collapse: separate;        /*Без этого IE не может корректно отобразить галочку внутри чекбокса*/
+}
+
+/**************************************Кастомизация полосы прокрутки***************************************************/
+
+.mCS-md.mCSB_scrollTools .mCSB_dragger {
+    width: 16px;              /*Ширина области под полосу прокрутки*/
+}
+
+.mCS-md.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #5C6BC0;
+    width: 8px;                   /*Ширина самой полосы прокрутки*/
+}
+
+/**************************************Кастомизация меню, всплывающих окон и уведомлений***************************************************/
+
+/*Внешний вид загловка всплывающего окна*/
+md-dialog-content > h2 {
+    margin-bottom: 10px;       /*По умолчанию отступ маловат*/
+    color: #5C6BC0;            /*Цвет темы*/
+}
+
+/*Настройка параметров отображения уведомлений*/
+md-toast {
+    display: block;                 /*Для предсказуемого поведения в IE*/
+}
+
+md-toast.md-default-theme .md-toast-content, md-toast .md-toast-content {
+    display: block;                      /*Для предсказуемого поведения в IE*/
+    background-color: #354052;           /*Один из цветов темы*/
+    color: white;
+    text-align: center;
+    height: 3em;
+    line-height: 3em;     /*для центрирования по вертикали*/
+}
+
+@media (min-width: 1920px) {
+    md-toast {
+        max-width: 700px;       /*Ограничение мкасимальной ширины уведомлений при большом окне или развертке браузера на весь экран*/
+    }
+}
+
+@media (min-width: 960px) {
+    md-toast {
+        min-width: 200px;         /*Минимальная ширина уведомления уменьшена, для того, чтобы если в нем мало текста оно смотрелось лучше*/
+    }
+}
+
+.md-primary.md-raised.md-hue-3.md-button.md-ink-ripple {
+    vertical-align: middle;            /*Для IE*/
+}
+
+div._md._md-open-menu-container.md-whiteframe-z2._md-active._md-clickable {
+    overflow: hidden;          /*Контент, каким бы он ни был большим не должен вылезать за пределы меню*/
+}
+
+/*Для дизайна лучше убрать лишние отступы внутри меню*/
+md-menu-content {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+/*Для дизайна лучше убрать лишние отступы внутри пунктов меню (кнопок)*/
+md-menu-item > .md-button {
+    padding-left: 5px;
+    padding-right: 5px;
+    display: block;                /*Для Корректного отображения в IE*/
+}
+
+md-menu-item button span {
+    display: inline-block;          /*Для того, чтобы быть с иконкой в одной строке*/
+    line-height: normal;
+    font-weight: bold;
+    color: #354052;                 /*Один из цветов темы*/
+}
+
+md-menu-item button:hover span {
+    color: #5c6bc0;                 /*Более яркий цвет из темы, чтобы подчеркнуть интерактивность*/
+}
+
+md-menu-item > .md-button md-icon {
+    margin: 0px 4px 0px 2px;
+    display: inline-block;
+}
+
+/*По-умолчанию тоже имеет темный цвет темы*/
+md-menu-item > .md-button:not([disabled]) md-icon svg path {
+    fill: #354052
+}
+
+/*При наведении меняет на яркий цвет темы (аналогично тексту, чтобы казаться единый целым)*/
+md-menu-item > .md-button:not([disabled]):hover md-icon svg path {
+    fill: #5C6BC0;
+}
+
+md-menu-item .md-button:not([disabled]):hover,
+md-menu-item .md-button:not([disabled]).md-focused {
+    background-color: transparent;            /*Кнопки меню задуманы прозрачными даже при наведении*/
+}
+
+/**************************************************************Разные вспомогательные классы********************************************************************************/
+
+.counter a {
+    color: inherit;    /*Ссылки внутри счетчиков не должны быть видны*/
+}
+
+/**Выравнивает блочные и строчно-блочные элементы по центру по горизонтали*/
+.h-centeralize {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/*Вспомагательный класс для помощи в выравнивании элементов страницы по левому краю таблицы*/
+.table-width {
+    width: 964px;
+}
+
+/*Все блоки с этим набором классов являются контейнерами и должны предоставлять возможность
+**точной настройки расположения абсолютно позиционируемым внутренним объектам относительно координат родителя (себя)*/
+div.h-centeralize.table-width {
+    position: relative;
+}
+
+/*Класс блока с описанием содержимого таблицы*/
+.page-description {
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #999a9a;
+}
+
+md-checkbox.md-checked ._md-icon::after {
+    display: block;
+}
+
+/*angular добавляет всем элементам, у которых в макете было указано ng-click атрибут role="button",
+ *который по правилам angular должен иметь обводку при клике*/
+*[role="button"] {
+    outline: none;         /*Отключение обводки*/
+}
+
+/*Вспомогательный класс для выравнивания элементов интерфейса по центру рабочего окна*/
+.constraint {
+    max-width: 965px;
+}
+
+/*Класс для создания удобных контейнеров*/
+.wrapper {
+    display: inline-block;           /*Чтобы не мешал другим элементам в строке*/
+    position: relative;              /*Для расположения абсол. позицонированных элементов*/
+}
+
+
+/*На разных страницах высота рабочей области (workspace) нужна разная*/
+.wh2 {
+    min-height: 500px;
+}

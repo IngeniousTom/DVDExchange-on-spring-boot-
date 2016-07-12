@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dvdexchange.model.Takenitem" table="TAKENITEM" schema="PUBLIC" catalog="PUBLIC">
+        <id name="iddisk" type="int">
+            <column name="IDDISK" />
+        </id>
+        <property name="iduser" column="IDUSER"/>
+        <many-to-one name="tempUser" class="com.dvdexchange.model.User" insert="false" update="false">
+            <column name="IDUSER"/>
+        </many-to-one>
+        <many-to-one name="disk" class="com.dvdexchange.model.Disk" column="IDDISK" insert="false" update="false"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,112 @@
+/**Очистка внутренних и внешних отступов для всех элементов по-умолчанию.
+***Полезно для получения одинаковых отступов во всех браузерах*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    /*Убирает нежелательную возможность выделять содержимое веб-страницы*/
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE/Edge */
+    user-select: none;
+    background-image: url("../images/android-5-0-lollipop-material-3569.jpg");
+    padding-top: 80px;
+}
+
+h1, h2, h3 {
+    text-align: center;  /*Все заголовки должны быть по центру. Это нужно для адаптивности верстки*/
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-style: italic;         /*Заставляет текст выглядеть особенным. Используется для стилизации названия сервиса*/
+}
+
+
+/**Блок с описанием назначения сервиса DVDExchange*/
+.description-box {
+    margin-bottom: 95px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    color: white;
+    background-color: #5C6BC0;
+    box-shadow: 5px 5px 13px -2px rgba(24, 24, 24, 0.58);
+}
+
+/**Блок со всеми элементами для авторизации*/
+.login-box {
+    margin: auto;
+    padding: 20px 20px 20px 20px;
+    width: 380px;
+    background: white;
+    box-shadow: 5px 5px 13px -2px rgba(24, 24, 24, 0.82);
+    box-sizing: border-box;
+}
+
+.login-box > div:first-child {        /*Весь текст в блоке авторизации должен быть по центру (кроме полей)*/
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/**текстовые поля блока авторизации*/
+md-input-container {
+    margin: 0px;
+    height: 50px;         /*должны быть поближе друг к другу*/
+    text-align: left;
+}
+
+/**Кастомизация внешнего вида кнопуи ВХОД блока авторизации*/
+.md-button {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 12px 0px 0px 0px;
+    text-decoration: none;
+}
+
+/**Блок вывода сообщений от системы авторизации (ошибка, выход из аккаунта)*/
+.sys-msg-box {
+    padding: 15px;
+    margin-bottom: 30px;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+/**Внешний вид блока сообщений при выводе сообщения об ошибке*/
+.error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+/**Внешний вид блока сообщений при выводе прочих сообщений (выход из аккаунта н.р.)*/
+.msg {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+/**Класс выравнивает блочные и строчно-блочные элементы по центру по горизонтали*/
+.h-centeralize {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+div.h-centeralize {
+    max-width: 700px;      /*нужен эффект гибкого макета*/
+    min-width: 380px;
+}
+
+/*выравнивает текст внутри элемента по горизонтали*/
+.h-text-centeralize {
+    text-align: center;
+}
+
+/*Придает тексту главный цвет темы, выделяя его особое значение. Используется например для крупных заголовков*/
+.primary_color {
+    color: rgb(92, 107, 192);
+}

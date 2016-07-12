@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dvdexchange.model.User" table="USER" schema="PUBLIC" catalog="PUBLIC">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="name" column="NAME"/>
+        <property name="lastname" column="LASTNAME"/>
+        <property name="patronym" column="PATRONYM"/>
+        <property name="birthdate" column="BIRTHDATE"/>
+        <property name="email" column="EMAIL"/>
+        <property name="password" column="PASSWORD"/>
+        <set name="disks" inverse="true">
+            <key>
+                <column name="IDHOST"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.dvdexchange.model.Disk"/>
+        </set>
+        <set name="takenDisks" inverse="true">
+            <key>
+                <column name="IDUSER"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.dvdexchange.model.Takenitem"/>
+        </set>
+    </class>
+</hibernate-mapping>
