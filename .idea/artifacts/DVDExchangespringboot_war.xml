@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="DVDExchangespringboot:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="dvdexchange-spring-boot-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="DVDExchangespringboot:war exploded" />
+    </root>
+  </artifact>
+</component>

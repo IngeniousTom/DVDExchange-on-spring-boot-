@@ -6,7 +6,7 @@
     <groupId>com.example</groupId>
     <artifactId>dvdexchange-spring-boot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>DVDExchange-spring-boot</name>
     <description>DVDExchange web app baseb on Spring</description>
@@ -52,7 +52,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jetty</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
@@ -199,7 +198,6 @@
             <artifactId>apache-jsp</artifactId>
             <version>8.0.27</version>
         </dependency>
-
     </dependencies>
 
     <build>
